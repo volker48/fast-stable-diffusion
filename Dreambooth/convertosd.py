@@ -204,8 +204,8 @@ if __name__ == "__main__":
     parser.add_argument("-m", "--model_path", dest="model_path")
     parser.add_argument("-c", "--checkpoint_path", dest="checkpoint_path")
     args = parser.parse_args()
-    model_path = model_path if model_path else parser.model_path
-    checkpoint_path = checkpoint_path if checkpoint_path else parser.checkpoint_path
+    model_path = model_path if model_path else args.model_path
+    checkpoint_path = checkpoint_path if checkpoint_path else args.checkpoint_path
     unet_path = osp.join(model_path, "unet", "diffusion_pytorch_model.bin")
     vae_path = osp.join(model_path, "vae", "diffusion_pytorch_model.bin")
     text_enc_path = osp.join(model_path, "text_encoder", "pytorch_model.bin")
